@@ -58,6 +58,8 @@ inputs:
       [Learn more about cross-os caching](https://github.com/actions/cache/blob/main/tips-and-workarounds.md#cross-os-cache).
     required: false
     default: false
+  path:
+    required: false
 
 runs:
   using: "composite"
@@ -71,6 +73,7 @@ runs:
         token: ${{ inputs.token }}
         submodules: ${{ inputs.submodules }}
         persist-credentials: ${{ inputs.persist-credentials }}
+        path: ${{ inputs.path }}
 
     - name: Create LFS file list
       run: |
